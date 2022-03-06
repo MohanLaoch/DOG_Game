@@ -15,14 +15,17 @@ public class dog : MonoBehaviour
     public string leastFood;
 
     public string[] allTreasure;
-    public string currentTreasure;
-    public int index;
+    private string currentTreasure;
+    private int index;
 
     public bool stray;
     public bool adoptable;
 
     public bool hasTreasure;
     public int treasureChance;
+
+    public int realtime;
+    public int timer;
     bool timerDone;
 
     private GameObject treasure;
@@ -46,6 +49,9 @@ public class dog : MonoBehaviour
 
     void FixedUpdate()
     {
+        realtime = (int)GameObject.Find("DogManager").GetComponent<dogManager>().timeNow;
+        timer = realtime;
+
         if (dogHappiness >= 50 && stray) //if happy and still a stray, make adoptable
         {
             adoptable = true;
@@ -70,6 +76,7 @@ public class dog : MonoBehaviour
         
 
         hasTreasure = false;
+        treasure.SetActive(false);
         timerDone = false; //restart treasure timer
     }
 

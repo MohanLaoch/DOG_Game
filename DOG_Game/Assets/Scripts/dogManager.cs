@@ -10,6 +10,9 @@ public class dogManager : MonoBehaviour
     public GameObject[] KitchenAreas;
     public int maxDogs;
 
+    public float extraTime = 0;
+    public float timeNow;
+
     //check what food and toys have been put out, how much time has elapsed since food, how many dogs are there and where they are in the level,
     //world timer, etc etc
 
@@ -20,6 +23,11 @@ public class dogManager : MonoBehaviour
 
     void FixedUpdate()
     {
+        WorldTimer();
+    }
 
+    void WorldTimer()
+    {
+        timeNow = Time.realtimeSinceStartup + extraTime;
     }
 }

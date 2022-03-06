@@ -831,6 +831,7 @@ GameObject:
   - component: {fileID: 265464648}
   - component: {fileID: 265464647}
   - component: {fileID: 265464646}
+  - component: {fileID: 265464649}
   m_Layer: 0
   m_Name: Jack Russell
   m_TagString: Untagged
@@ -856,10 +857,15 @@ MonoBehaviour:
   favFood: 
   leastToy: 
   leastFood: 
+  allTreasure:
+  - Trophy
+  - Dog Bowl
+  - Newspaper
   stray: 0
   adoptable: 0
   hasTreasure: 0
   treasureChance: 0
+  timer: 0
 --- !u!212 &265464647
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -926,6 +932,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!58 &265464649
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265464645}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &268775658
 GameObject:
   m_ObjectHideFlags: 0
@@ -1672,7 +1694,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &658647144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1691,10 +1713,12 @@ MonoBehaviour:
   favFood: 
   leastToy: 
   leastFood: 
+  allTreasure: []
   stray: 0
   adoptable: 0
   hasTreasure: 0
   treasureChance: 0
+  timer: 0
 --- !u!212 &658647145
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3029,6 +3053,8 @@ MonoBehaviour:
   - {fileID: 671243054}
   KitchenAreas: []
   maxDogs: 2
+  extraTime: 0
+  timeNow: 0
 --- !u!4 &1196413415
 Transform:
   m_ObjectHideFlags: 0
@@ -3388,7 +3414,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1426984113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3407,10 +3433,12 @@ MonoBehaviour:
   favFood: 
   leastToy: 
   leastFood: 
+  allTreasure: []
   stray: 0
   adoptable: 0
   hasTreasure: 0
   treasureChance: 0
+  timer: 0
 --- !u!212 &1426984114
 SpriteRenderer:
   m_ObjectHideFlags: 0

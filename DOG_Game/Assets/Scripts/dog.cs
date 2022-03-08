@@ -24,9 +24,11 @@ public class dog : MonoBehaviour
     public bool hasTreasure;
     public int treasureChance;
 
-    public int realtime;
-    public int timer;
-    bool timerDone;
+    public int apptime; //time since start of thingy
+    public float timer = 0.0f;
+    public float sinceLastTreasure; //timer ig
+    public float treasureTime; //wait time
+
 
     private GameObject treasure;
 
@@ -45,12 +47,14 @@ public class dog : MonoBehaviour
         {
             dogHappiness = 0;
         }
+
+        Timerr();
     }
 
     void FixedUpdate()
     {
-        realtime = (int)GameObject.Find("DogManager").GetComponent<dogManager>().timeNow;
-        timer = realtime;
+        apptime = (int)GameObject.Find("DogManager").GetComponent<dogManager>().timeNow;
+       
 
         if (dogHappiness >= 50 && stray) //if happy and still a stray, make adoptable
         {
@@ -61,7 +65,7 @@ public class dog : MonoBehaviour
             adoptable = false;
         }
 
-        if (timerDone)
+        if (sinceLastTreasure / treasureTime >= 1)
         {
             hasTreasure = true;
             treasure.SetActive(true);
@@ -73,11 +77,11 @@ public class dog : MonoBehaviour
     {
         index = Random.Range(0, allTreasure.Length);
         currentTreasure = allTreasure[index];
-        
+
 
         hasTreasure = false;
         treasure.SetActive(false);
-        timerDone = false; //restart treasure timer
+        sinceLastTreasure = 0;
     }
 
     void CalculateHappiness()
@@ -87,11 +91,23 @@ public class dog : MonoBehaviour
 
     void OnMouseDown()
     {
-        // this object was clicked - do something
         if (hasTreasure)
         {
             CollectTreasure();
         }
     }
 
+    void Timerr()
+    {
+        timer += Time.deltaTime;
+
+        if(timer > treasureTime)
+        {
+            Debug.Log("thefuck");
+            timer = timer - treasureTime;
+            sinceLastTreasure += 1;
+        }
+    }
 }
+
+

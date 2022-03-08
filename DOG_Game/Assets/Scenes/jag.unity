@@ -865,7 +865,10 @@ MonoBehaviour:
   adoptable: 0
   hasTreasure: 0
   treasureChance: 0
+  apptime: 0
   timer: 0
+  sinceLastTreasure: 0
+  treasureTime: 20
 --- !u!212 &265464647
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1718,7 +1721,10 @@ MonoBehaviour:
   adoptable: 0
   hasTreasure: 0
   treasureChance: 0
+  apptime: 0
   timer: 0
+  sinceLastTreasure: 0
+  treasureTime: 0
 --- !u!212 &658647145
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3438,7 +3444,10 @@ MonoBehaviour:
   adoptable: 0
   hasTreasure: 0
   treasureChance: 0
+  apptime: 0
   timer: 0
+  sinceLastTreasure: 0
+  treasureTime: 0
 --- !u!212 &1426984114
 SpriteRenderer:
   m_ObjectHideFlags: 0

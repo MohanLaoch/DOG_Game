@@ -6,8 +6,14 @@ public class dog : MonoBehaviour
 {
     [SerializeField] public string dogName;
 
-    [Range(0, 100)]
-    public float dogHappiness;
+    //[Range(0, 100)]
+    //public float dogHappiness;
+
+    public int maxHappiness = 100;
+    public int currentHappiness;
+    public HappinessBar happinessBar;
+
+    public int petHappiness;
 
     public string favToy;
     public string favFood;
@@ -35,20 +41,25 @@ public class dog : MonoBehaviour
     public void Start()
     {
         treasure = transform.Find("Treasure").gameObject;
+
+        // Sets happiness at the beginning of the scene
+        currentHappiness = maxHappiness/2;
+        happinessBar.SetMaxHappiness(maxHappiness);
     }
 
     public void Update()
     {
-        if (dogHappiness > 100)
+        if (currentHappiness > 100)
         {
-            dogHappiness = 100;
+            currentHappiness = 100;
         }
-        else if (dogHappiness < 0)
+        else if (currentHappiness < 0)
         {
-            dogHappiness = 0;
+            currentHappiness = 0;
         }
 
         Timerr();
+
     }
 
     void FixedUpdate()
@@ -56,7 +67,7 @@ public class dog : MonoBehaviour
         apptime = (int)GameObject.Find("DogManager").GetComponent<dogManager>().timeNow;
        
 
-        if (dogHappiness >= 50 && stray) //if happy and still a stray, make adoptable
+        if (currentHappiness >= 50 && stray) //if happy and still a stray, make adoptable
         {
             adoptable = true;
         }
@@ -107,6 +118,13 @@ public class dog : MonoBehaviour
             timer = timer - treasureTime;
             sinceLastTreasure += 1;
         }
+    }
+
+    public void GetPet()
+    {
+        currentHappiness += petHappiness;
+
+        happinessBar.SetHappiness(currentHappiness);
     }
 }
 

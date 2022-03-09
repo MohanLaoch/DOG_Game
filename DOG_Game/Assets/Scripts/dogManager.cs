@@ -18,7 +18,8 @@ public class dogManager : MonoBehaviour
 
     void Start()
     {
-        
+        FindObjectOfType<AudioManager>().Play("bckgmusic");
+
     }
 
     void FixedUpdate()

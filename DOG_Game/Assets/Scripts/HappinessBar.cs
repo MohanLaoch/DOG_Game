@@ -12,12 +12,11 @@ public class HappinessBar : MonoBehaviour
 
     public Image fill;
 
+
     // Sets slider to max happiness
     public void SetMaxHappiness(int happiness)
     {
         slider.maxValue = happiness;
-        slider.value = happiness/2;
-
         fill.color = gradient.Evaluate(.5f);
     }
 

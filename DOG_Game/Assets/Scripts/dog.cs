@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class dog : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class dog : MonoBehaviour
     public int maxHappiness = 100;
     public int currentHappiness;
     public HappinessBar happinessBar;
+    private Slider hslider;
 
     public int petHappiness;
 
@@ -34,16 +37,20 @@ public class dog : MonoBehaviour
     public float timer = 0.0f;
     public float sinceLastTreasure; //timer ig
     public float treasureTime; //wait time
+    public float foodTime; //wait time
 
 
-    private GameObject treasure;
+    public string[] barkArray = {"bark1", "bark2", "bark3", "bark4" };
+
+    public GameObject treasure;
 
     public void Start()
     {
+        hslider = GetComponentInChildren<Slider>();
         treasure = transform.Find("Treasure").gameObject;
 
         // Sets happiness at the beginning of the scene
-        currentHappiness = maxHappiness/2;
+        currentHappiness = (int)hslider.value;
         happinessBar.SetMaxHappiness(maxHappiness);
     }
 
@@ -60,10 +67,13 @@ public class dog : MonoBehaviour
 
         Timerr();
 
+        CalculateHappiness();
+
     }
 
     void FixedUpdate()
     {
+        happinessBar.SetHappiness(currentHappiness);
         apptime = (int)GameObject.Find("DogManager").GetComponent<dogManager>().timeNow;
        
 
@@ -76,20 +86,13 @@ public class dog : MonoBehaviour
             adoptable = false;
         }
 
-        if (sinceLastTreasure / treasureTime >= 1)
-        {
-            hasTreasure = true;
-            treasure.SetActive(true);
-        }
-
     }
 
     void CollectTreasure() //make dog shiny, if clicked on when shiny then give treasure
     {
         index = Random.Range(0, allTreasure.Length);
         currentTreasure = allTreasure[index];
-
-
+        FindObjectOfType<AudioManager>().Play("bell");
         hasTreasure = false;
         treasure.SetActive(false);
         sinceLastTreasure = 0;
@@ -114,17 +117,25 @@ public class dog : MonoBehaviour
 
         if(timer > treasureTime)
         {
-            Debug.Log("thefuck");
+            //Debug.Log("thefuck");
             timer = timer - treasureTime;
+            hasTreasure = true;
+            treasure.SetActive(true);
             sinceLastTreasure += 1;
+
+            currentHappiness -= 30;
+
         }
+
+
+
     }
 
     public void GetPet()
     {
         currentHappiness += petHappiness;
-
-        happinessBar.SetHappiness(currentHappiness);
+        FindObjectOfType<AudioManager>().Play(barkArray[Random.Range(0, barkArray.Length)]);
+ 
     }
 }
 

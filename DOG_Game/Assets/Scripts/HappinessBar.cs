@@ -21,7 +21,7 @@ public class HappinessBar : MonoBehaviour
     }
 
     // Sets slider to current happiness
-    public void SetHappiness(int happiness)
+    public void SetHappiness(float happiness)
     {
         slider.value = happiness;
 

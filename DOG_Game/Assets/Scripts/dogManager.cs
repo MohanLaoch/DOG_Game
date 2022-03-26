@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class dogManager : MonoBehaviour
@@ -9,9 +10,15 @@ public class dogManager : MonoBehaviour
     public GameObject[] KitchenAreas;
     public GameObject[] BedroomAreas;
     public int maxDogs;
+    public bool maxReached = false;
 
-    public float extraTime = 0;
-    public float timeNow;
+    public GameObject timeDisplay;
+    public int hour;
+    public int mins;
+    public int seconds;
+
+    public int currency1;
+    public int currency2;
 
     //check what food and toys have been put out, how much time has elapsed since food, how many dogs are there and where they are in the level,
     //world timer, etc etc
@@ -19,16 +26,19 @@ public class dogManager : MonoBehaviour
     void Start()
     {
         FindObjectOfType<AudioManager>().Play("bckgmusic");
-
     }
 
     void FixedUpdate()
     {
-        WorldTimer();
+        DisplayTime();
+
     }
 
-    void WorldTimer()
+    void DisplayTime()
     {
-        timeNow = Time.realtimeSinceStartup + extraTime;
+        hour = System.DateTime.Now.Hour;
+        mins = System.DateTime.Now.Minute;
+        seconds = System.DateTime.Now.Second;
+        timeDisplay.GetComponent<Text>().text = hour + ":" + mins + ":" + seconds;
     }
 }

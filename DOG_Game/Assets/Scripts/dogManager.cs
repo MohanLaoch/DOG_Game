@@ -6,8 +6,8 @@ public class dogManager : MonoBehaviour
 {
     public GameObject[] Dogs; //all dogs that exis
     public GameObject[] GardenAreas; //where dogs can be placed
-    public GameObject[] IndoorAreas;
     public GameObject[] KitchenAreas;
+    public GameObject[] BedroomAreas;
     public int maxDogs;
 
     public float extraTime = 0;

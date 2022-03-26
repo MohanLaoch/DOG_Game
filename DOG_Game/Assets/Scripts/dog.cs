@@ -95,7 +95,6 @@ public class dog : MonoBehaviour
             currentHappiness = currentHappiness - 1;
             happinessDown = false;
         }
-
     }
 
     public void ManageStray()

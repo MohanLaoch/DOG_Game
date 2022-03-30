@@ -117,8 +117,6 @@ public class dog : MonoBehaviour
                 RunAway();
             }
         }
-
- 
     }
 
 
@@ -173,10 +171,10 @@ public class dog : MonoBehaviour
         if (canBePet)
         {
             Debug.Log("gothappiness");
-            currentHappiness += 10;
+            currentHappiness += 20;
             canBePet = false;
 
-            ManageLevel(15);
+            ManageLevel(50);
         }
 
         FindObjectOfType<AudioManager>().Play(barkArray[Random.Range(0, barkArray.Length)]);
@@ -202,7 +200,6 @@ public class dog : MonoBehaviour
     {
         index = Random.Range(0, allTreasure.Length);
         currentTreasure = allTreasure[index];
-
 
         if (hasTreasure)
         {

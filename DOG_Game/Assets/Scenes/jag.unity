@@ -2346,25 +2346,13 @@ MonoBehaviour:
   stray: 1
   adoptable: 0
   adoptUI: {fileID: 0}
-  apptime: 0
-  treasureTimer: 0
-  treasureTime: 150
-  hasTreasure: 0
-  foodTime: 0
-  petTimer: 0
-  petTime: 0
-  canBePet: 0
-  happinessTimer: 0
-  happinessTime: 0
-  happinessDown: 0
-  baseHT: 0
   XP: 0
   Level: 0
-  barkArray:
-  - bark1
-  - bark2
-  - bark3
-  - bark4
+  apptime: 0
+  treasureTime: 150
+  foodTime: 0
+  petTime: 0
+  happinessTime: 0
 --- !u!212 &658647145
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4175,10 +4163,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 927351f5d0d453441a24db4bca46fe50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Dogs:
-  - {fileID: 1984651733}
-  - {fileID: 658647143}
-  - {fileID: 1426984112}
+  Strays: []
+  Adopted: []
   GardenAreas:
   - {fileID: 20372368}
   - {fileID: 1180920895}
@@ -5242,25 +5228,13 @@ MonoBehaviour:
   stray: 1
   adoptable: 0
   adoptUI: {fileID: 0}
-  apptime: 0
-  treasureTimer: 0
-  treasureTime: 320
-  hasTreasure: 0
-  foodTime: 0
-  petTimer: 0
-  petTime: 0
-  canBePet: 0
-  happinessTimer: 0
-  happinessTime: 0
-  happinessDown: 0
-  baseHT: 0
   XP: 0
   Level: 0
-  barkArray:
-  - bark1
-  - bark2
-  - bark3
-  - bark4
+  apptime: 0
+  treasureTime: 320
+  foodTime: 0
+  petTime: 0
+  happinessTime: 0
 --- !u!212 &1426984114
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7165,25 +7139,13 @@ MonoBehaviour:
   stray: 1
   adoptable: 0
   adoptUI: {fileID: 0}
-  apptime: 0
-  treasureTimer: 0
-  treasureTime: 50
-  hasTreasure: 0
-  foodTime: 0
-  petTimer: 15
-  petTime: 5
-  canBePet: 1
-  happinessTimer: 0
-  happinessTime: 15
-  happinessDown: 0
-  baseHT: 0
   XP: 0
   Level: 0
-  barkArray:
-  - bark1
-  - bark2
-  - bark3
-  - bark4
+  apptime: 0
+  treasureTime: 50
+  foodTime: 100
+  petTime: 5
+  happinessTime: 15
 --- !u!4 &1984651735
 Transform:
   m_ObjectHideFlags: 0

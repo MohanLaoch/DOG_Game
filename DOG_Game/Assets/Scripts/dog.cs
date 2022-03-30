@@ -7,19 +7,16 @@ using UnityEngine.UI;
 public class dog : MonoBehaviour
 {
     public string dogName;
-    public GameObject inputField;
-    public GameObject namingCanvas;
-    public GameObject name;
+    [HideInInspector] public GameObject inputField;
+    [HideInInspector] public GameObject namingCanvas;
+    [HideInInspector] public GameObject name;
 
     public int maxHappiness = 100;
     public float currentHappiness;
 
-    public HappinessBar happinessBar;
-    private Slider hslider;
-    public GameObject treasureObj;
-
-    //public string favToy;
-    //public string favFood;
+    [HideInInspector] public HappinessBar happinessBar;
+    [HideInInspector] private Slider hslider;
+    [HideInInspector] public GameObject treasureObj;
 
     public int treasureChance;
     public string[] allTreasure;
@@ -28,37 +25,41 @@ public class dog : MonoBehaviour
 
     public bool stray;
     public bool adoptable;
-    public GameObject adoptUI;
-
-    public int apptime; //time since start of thingy
-
-    public float treasureTimer = 0.0f;
-    public float treasureTime; //wait time
-    public bool hasTreasure;
-
-    [Header("Timer Information")]
-    public float foodTime; //wait time
-
-    public float petTimer = 0.0f;
-    public float petTime; //wait time
-    public bool canBePet = true;
-
-    public float happinessTimer = 0.0f;
-    public float happinessTime; //wait time
-    public bool happinessDown;
-
-    public float baseHT;
+    [HideInInspector] public GameObject adoptUI;
 
     public int XP = 0;
     public int Level = 1;
 
-    public string[] barkArray = { "bark1", "bark2", "bark3", "bark4" };
+    private string[] barkArray = { "bark1", "bark2", "bark3", "bark4" };
 
+    [Header("Timer Information")]
 
+    public int apptime; //time since start of thingy
+
+    private float treasureTimer = 0.0f;
+    public float treasureTime; //wait time
+    private bool hasTreasure;
+
+    private float foodTimer; 
+    public float foodTime; //wait time
+    private bool hungry;
+
+    private float petTimer = 0.0f;
+    public float petTime; //wait time
+    private bool canBePet = true;
+
+    private float happinessTimer = 0.0f;
+    public float happinessTime; //wait time
+    private bool happinessDown;
+
+    
     public void Start()
     {
         hslider = GetComponentInChildren<Slider>();
         treasureObj = transform.Find("Treasure").gameObject;
+
+        index = Random.Range(0, allTreasure.Length); //get a random start treasure
+        currentTreasure = allTreasure[index];
 
         // Sets happiness at the beginning of the scene
         currentHappiness = (int)hslider.value;
@@ -159,6 +160,12 @@ public class dog : MonoBehaviour
             happinessTimer = happinessTimer - happinessTime;
             happinessDown = true;
         }
+
+        if (foodTimer > foodTime)
+        {
+            foodTimer = foodTimer - foodTime;
+            hungry = true;
+        }
     }
 
     public void GetPet()
@@ -177,11 +184,27 @@ public class dog : MonoBehaviour
         FindObjectOfType<AudioManager>().Play(barkArray[Random.Range(0, barkArray.Length)]);
     }
 
+    public void GetFed()
+    {
+        Debug.Log("gotfed");
+
+        if (hungry)
+        {
+            Debug.Log("gothappiness");
+            currentHappiness += 10;
+            hungry = false;
+
+            ManageLevel(15);
+        }
+
+        //play sound on feeding, make new array
+    }
+
     public void GetTreasure()
     {
-
         index = Random.Range(0, allTreasure.Length);
         currentTreasure = allTreasure[index];
+
 
         if (hasTreasure)
         {

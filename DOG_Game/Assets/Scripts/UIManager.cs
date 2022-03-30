@@ -48,6 +48,13 @@ public class UIManager : MonoBehaviour
     public Button livingRoomUpgradeButton;
     public Button BedRoomUpgradeButton;*/
 
+    public void Start()
+    {
+        //bones = FindObjectOfType<dogManager>().currency1;
+        //treats = FindObjectOfType<dogManager>().currency2;
+
+    }
+
     public void FixedUpdate()
     {
         bonesCount.text = bones.ToString();

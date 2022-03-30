@@ -7,9 +7,11 @@ using UnityEngine.UI;
 public class dog : MonoBehaviour
 {
     public string dogName;
-    [HideInInspector] public GameObject inputField;
-    [HideInInspector] public GameObject namingCanvas;
-    [HideInInspector] public GameObject name;
+    public GameObject inputField;
+    public GameObject namingCanvas;
+    public GameObject name;
+    public GameObject adoptButton;
+
 
     public int maxHappiness = 100;
     public float currentHappiness;
@@ -25,7 +27,7 @@ public class dog : MonoBehaviour
 
     public bool stray;
     public bool adoptable;
-    [HideInInspector] public GameObject adoptUI;
+    //public GameObject adoptUI;
 
     public int XP = 0;
     public int Level = 1;
@@ -100,7 +102,6 @@ public class dog : MonoBehaviour
 
     public void ManageStray()
     {
-        bool maxdogs = GameObject.Find("DogManager").GetComponent<dogManager>().maxReached;
 
         if (stray)
         {
@@ -117,10 +118,7 @@ public class dog : MonoBehaviour
             }
         }
 
-        if(adoptable && !maxdogs)
-        {
-            SetName();
-        }
+ 
     }
 
 
@@ -221,10 +219,19 @@ public class dog : MonoBehaviour
 
     public void SetName()
     {
-        dogName = inputField.GetComponent<Text>().text;
-        stray = false;
-        name.SetActive(true);
-        namingCanvas.SetActive(false);
+        bool maxdogs = GameObject.Find("DogManager").GetComponent<dogManager>().maxReached;
+
+        if (adoptable && !maxdogs)
+        {
+            dogName = inputField.GetComponent<Text>().text;
+            stray = false;
+            name.SetActive(true);
+            namingCanvas.SetActive(false);
+        }
+        else
+        {
+            Debug.Log("This dog doesn't trust you enough!");
+        }
     }
 
     public void RunAway() //unfinished

@@ -18,14 +18,16 @@ public class dogManager : MonoBehaviour
     public int mins;
     public int seconds;
 
-    public int currency1; //snacks and whatnot
-    public int currency2;
+    public int currency1 = 15; //bones
+    public int currency2 = 5; //treats
 
     //check what food and toys have been put out, how many dogs are there and where they are in the level,
     //world timer, etc etc
 
     void Start()
     {
+        currency1 = FindObjectOfType<UIManager>().bones;
+        currency2 = FindObjectOfType<UIManager>().treats;
         FindObjectOfType<AudioManager>().Play("bckgmusic");
     }
 

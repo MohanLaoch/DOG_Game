@@ -1,0 +1,335 @@
+fileFormatVersion: 2
+guid: ef8616c3cdeca1b4597f39d705c0c9d4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2718016212831297679
+    second: whippet_0
+  - first:
+      213: 6314009965795679169
+    second: whippet_1
+  - first:
+      213: -3533498551621489616
+    second: whippet_2
+  - first:
+      213: 8046937252637955068
+    second: whippet_3
+  - first:
+      213: 4500077142128331678
+    second: whippet_4
+  - first:
+      213: -8628490883228159144
+    second: whippet_5
+  - first:
+      213: -5585709173975491829
+    second: whippet_6
+  - first:
+      213: -5513250369539659364
+    second: whippet_7
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: whippet_0
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 335
+        width: 103
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones:
+      - name: bone_1
+        position: {x: 46.165207, y: 93.65875, z: 0}
+        rotation: {x: 0, y: 0, z: -0.77027947, w: 0.63770646}
+        length: 77.84889
+        parentId: -1
+      spriteID: f80ef8b485558b520800000000000000
+      internalID: 2718016212831297679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: whippet_1
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 434
+        width: 45
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones:
+      - name: bone_1
+        position: {x: -0.50613403, y: 9.954895, z: 0}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        length: 45.888397
+        parentId: -1
+      spriteID: 1cb178f5c9edf9750800000000000000
+      internalID: 6314009965795679169
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: whippet_2
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 433
+        width: 42
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones:
+      - name: bone_1
+        position: {x: 7.4483643, y: 11.719696, z: 0}
+        rotation: {x: 0, y: 0, z: 0.055300415, w: 0.99846977}
+        length: 27.70246
+        parentId: -1
+      spriteID: 03c6e30e9cd76fec0800000000000000
+      internalID: -3533498551621489616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: whippet_3
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 348
+        width: 47
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones:
+      - name: bone_1
+        position: {x: 14.378845, y: 14.8854065, z: 0}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        length: 29.827454
+        parentId: -1
+      spriteID: cf3d759fbc67caf60800000000000000
+      internalID: 8046937252637955068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: whippet_4
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 342
+        width: 43
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones:
+      - name: bone_1
+        position: {x: -0.023742676, y: 14.766937, z: 0}
+        rotation: {x: 0, y: 0, z: 0, w: 1}
+        length: 43.593964
+        parentId: -1
+      spriteID: e9b0a6e715c737e30800000000000000
+      internalID: 4500077142128331678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: whippet_5
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 0
+        width: 288
+        height: 292
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8533d75e141714880800000000000000
+      internalID: -8628490883228159144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: whippet_6
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 266
+        width: 64
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones:
+      - name: bone_1
+        position: {x: 8.681824, y: 16.580688, z: 0}
+        rotation: {x: 0, y: 0, z: -0.035646204, w: 0.9993645}
+        length: 53.672863
+        parentId: -1
+      spriteID: b0bdc82c9139b72b0800000000000000
+      internalID: -5585709173975491829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: whippet_7
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 178
+        width: 52
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones:
+      - name: bone_1
+        position: {x: 6.206299, y: 18.157547, z: 0}
+        rotation: {x: 0, y: 0, z: 0.009614927, w: 0.9999538}
+        length: 39.777313
+        parentId: -1
+      spriteID: c992cc5dffffc73b0800000000000000
+      internalID: -5513250369539659364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -44,3 +44,6 @@ TagManager:
   - name: GermanShep
     uniqueID: 866666827
     locked: 0
+  - name: Whippet
+    uniqueID: 4217460051
+    locked: 0

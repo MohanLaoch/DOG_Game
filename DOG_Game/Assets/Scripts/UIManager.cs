@@ -6,6 +6,24 @@ using TMPro;
 
 public class UIManager : MonoBehaviour
 {
+    // Level Stuff
+    public Slider slider;
+    public Gradient gradient;
+
+    public Image fill;
+
+    public int maxExp = 100;
+    public int currentExp;
+    public int currentLevel;
+
+    public string saveName;
+    public string playerName;
+
+    public TMP_Text levelText;
+    public TMP_Text playerNameText;
+
+    public TMP_InputField playerNameInput;
+
     public int bones;
     public int treats;
 
@@ -50,13 +68,24 @@ public class UIManager : MonoBehaviour
 
     public void Start()
     {
+        currentExp = 0;
+        SetMaxExp(maxExp);
+
         //bones = FindObjectOfType<dogManager>().currency1;
         //treats = FindObjectOfType<dogManager>().currency2;
 
     }
 
-    public void FixedUpdate()
+    public void Update()
     {
+        SetExp(currentExp);
+
+        playerName = PlayerPrefs.GetString("name" , "none");
+        playerNameText.text = playerName.ToString();
+
+
+        levelText.text = currentLevel.ToString();
+        
         bonesCount.text = bones.ToString();
         treatsCount.text = treats.ToString();
 
@@ -65,6 +94,34 @@ public class UIManager : MonoBehaviour
         shinyStoneCount.text = shinyStone.ToString();
         tennisBallCount.text = tennisBall.ToString();
         newspaperCount.text = newspaper.ToString();
+
+        if (currentExp >= 100)
+        {
+            currentExp = 0;
+            currentLevel++;
+        }
+    }
+
+    public void SetName()
+    {
+        saveName = playerNameInput.text;
+        PlayerPrefs.SetString("name", saveName);
+    }
+
+    // Sets slider to max exp
+    public void SetMaxExp(int exp)
+    {
+        slider.maxValue = exp;
+        slider.value = exp;
+        fill.color = gradient.Evaluate(.5f);
+    }
+
+    // Sets slider to current exp
+    public void SetExp(float exp)
+    {
+        slider.value = exp;
+
+        fill.color = gradient.Evaluate(slider.normalizedValue);
     }
 
     public void sellTrophy()

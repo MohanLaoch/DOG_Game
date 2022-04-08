@@ -34,9 +34,4 @@ public class timescale : MonoBehaviour
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
     }
-
-    public void Diditwork()
-    {
-        Debug.Log("Fuck");
-    }
 }

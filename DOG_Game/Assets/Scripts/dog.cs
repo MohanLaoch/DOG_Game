@@ -16,7 +16,7 @@ public class dog : MonoBehaviour
     public int maxHappiness = 100;
     public float currentHappiness;
 
-    [HideInInspector] public HappinessBar happinessBar;
+     public HappinessBar happinessBar;
     [HideInInspector] private Slider hslider;
     [HideInInspector] public GameObject treasureObj;
 
@@ -185,13 +185,13 @@ public class dog : MonoBehaviour
     public void GetFed()
     {
         //Debug.Log("gotfed");
-        FindObjectOfType<UIManager>().ManageExp(5);
 
         if (hungry)
         {
             //Debug.Log("gothappiness");
             currentHappiness += 10;
             hungry = false;
+            FindObjectOfType<UIManager>().ManageExp(5);
 
             ManageLevel(15);
         }

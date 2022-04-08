@@ -218,6 +218,10 @@ public class dog : MonoBehaviour
             FindObjectOfType<AudioManager>().Play("bell");
 
         }
+        else
+        {
+            GameObject.Find("DogManager").GetComponent<dogManager>().SetTooltip("No Treasure Yet!");
+        }
     }
 
     public void SetName()

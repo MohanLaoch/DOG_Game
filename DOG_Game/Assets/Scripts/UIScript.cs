@@ -5,16 +5,24 @@ using UnityEngine;
 public class UIScript : MonoBehaviour
 {
     public List<GameObject> Children;
+    public GameObject dog;
+    public string name;
 
     // Start is called before the first frame update
     void Start()
     {
+
         foreach (Transform child in transform)
         {
 
             Children.Add(child.gameObject);
 
         }
+    }
+
+    void Update()
+    {
+        name = dog.GetComponent<dog>().dogName;
     }
 
 
@@ -27,6 +35,8 @@ public class UIScript : MonoBehaviour
             child.gameObject.SetActive(true);
 
         }
+
+        //GameObject.Find("DogManager").GetComponent<dogManager>().SetTooltip(name);
 
     }
 

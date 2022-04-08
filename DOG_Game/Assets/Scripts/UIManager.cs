@@ -27,7 +27,7 @@ public class UIManager : MonoBehaviour
     public int bones;
     public int treats;
 
-    public int decorationPrice;
+    public int decorationPrice = 10;
     public int roomCost;
 
     public int trophy;
@@ -80,12 +80,12 @@ public class UIManager : MonoBehaviour
     {
         SetExp(currentExp);
 
-        playerName = PlayerPrefs.GetString("name" , "none");
+        playerName = PlayerPrefs.GetString("name", "none");
         playerNameText.text = playerName.ToString();
 
 
         levelText.text = currentLevel.ToString();
-        
+
         bonesCount.text = bones.ToString();
         treatsCount.text = treats.ToString();
 
@@ -122,6 +122,12 @@ public class UIManager : MonoBehaviour
         slider.value = exp;
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
+    }
+
+    public void ManageExp(int XPgain)
+    {
+        currentExp = currentExp + XPgain;
+
     }
 
     public void sellTrophy()
@@ -173,6 +179,7 @@ public class UIManager : MonoBehaviour
     {
         if (treats > decorationPrice)
         {
+            treats -= decorationPrice;
             dogHouseButton.interactable = false;
             dogHouseObject.SetActive(true);
         }
@@ -182,6 +189,7 @@ public class UIManager : MonoBehaviour
     {
         if (treats > decorationPrice)
         {
+            treats -= decorationPrice;
             ballButton.interactable = false;
             ballObject.SetActive(true);
         }
@@ -191,6 +199,7 @@ public class UIManager : MonoBehaviour
     {
         if (treats > decorationPrice)
         {
+            treats -= decorationPrice;
             fenceButton.interactable = false;
             fenceObject.SetActive(true);
         }
@@ -200,6 +209,7 @@ public class UIManager : MonoBehaviour
     {
         if (treats > decorationPrice)
         {
+            treats -= decorationPrice;
             ropeButton.interactable = false;
             ropeObject.SetActive(true);
         }
@@ -209,6 +219,7 @@ public class UIManager : MonoBehaviour
     {
         if (treats > decorationPrice)
         {
+            treats -= decorationPrice;
             pillowButton.interactable = false;
             pillowObject.SetActive(true);
         }
@@ -218,10 +229,40 @@ public class UIManager : MonoBehaviour
     {
         if (treats > decorationPrice)
         {
+            treats -= decorationPrice;
             blanketButton.interactable = false;
             blanketObject.SetActive(true);
         }
     }
+
+    public void addTreasure(int nr) //god spaghetti code alas
+    {
+        if(nr == 0)
+        {
+            trophy++;
+        }
+        else if(nr == 1)
+        {
+            dogBowl++;
+        }
+        else if (nr == 2)
+        {
+            shinyStone++;
+        }
+        else if (nr == 3)
+        {
+            tennisBall++;
+        }
+        else if (nr == 4)
+        {
+            newspaper++;
+        }
+        else
+        {
+            treats ++;
+        }
+    }
+
 
     /*public void buyLivingRoomUpgrade()
     {

@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using TMPro;
 
 public class dogManager : MonoBehaviour
 {
+    public TMP_Text tooltip;
+
     public GameObject[] Strays; //all dogs at the beginning
     public GameObject[] Adopted; //all dogs that have been adopted in the game so far
     public GameObject[] GardenAreas; //where dogs can be placed
     public GameObject[] KitchenAreas;
     public GameObject[] BedroomAreas;
-    public int maxDogs;
+    public int maxDogs = 5;
     public bool maxReached = false;
 
     public GameObject timeDisplay;
@@ -29,12 +32,14 @@ public class dogManager : MonoBehaviour
         currency1 = FindObjectOfType<UIManager>().bones;
         currency2 = FindObjectOfType<UIManager>().treats;
         FindObjectOfType<AudioManager>().Play("bckgmusic");
+
+        tooltip = GameObject.Find("TooltipText").GetComponent<TMPro.TextMeshProUGUI>();
+
     }
 
     void FixedUpdate()
     {
         DisplayTime();
-
     }
 
     void DisplayTime()
@@ -43,5 +48,11 @@ public class dogManager : MonoBehaviour
         mins = System.DateTime.Now.Minute;
         seconds = System.DateTime.Now.Second;
         timeDisplay.GetComponent<Text>().text = hour + ":" + mins + ":" + seconds;
+    }
+
+    public void SetTooltip(string strig)
+    {
+        tooltip.text = strig.ToString();
+
     }
 }

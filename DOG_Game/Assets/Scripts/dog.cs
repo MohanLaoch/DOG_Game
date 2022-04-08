@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class dog : MonoBehaviour
@@ -11,7 +12,6 @@ public class dog : MonoBehaviour
     public GameObject namingCanvas;
     public GameObject name;
     public GameObject adoptButton;
-
 
     public int maxHappiness = 100;
     public float currentHappiness;
@@ -88,6 +88,8 @@ public class dog : MonoBehaviour
         happinessBar.SetHappiness(currentHappiness);
       //apptime = (int)GameObject.Find("DogManager").GetComponent<dogManager>().timeNow;
         ManageHappiness();
+        ManageStray();
+        dogName = inputField.GetComponent<Text>().text;
 
     }
 
@@ -118,7 +120,6 @@ public class dog : MonoBehaviour
             }
         }
     }
-
 
     void ManageLevel(int XPgain)
     {
@@ -174,6 +175,7 @@ public class dog : MonoBehaviour
             currentHappiness += 20;
             canBePet = false;
 
+            FindObjectOfType<UIManager>().ManageExp(2);
             ManageLevel(50);
         }
 
@@ -183,6 +185,7 @@ public class dog : MonoBehaviour
     public void GetFed()
     {
         Debug.Log("gotfed");
+        FindObjectOfType<UIManager>().ManageExp(5);
 
         if (hungry)
         {
@@ -206,6 +209,9 @@ public class dog : MonoBehaviour
             Debug.Log("got Treasure");
             hasTreasure = false;
             treasureObj.SetActive(false);
+            FindObjectOfType<UIManager>().ManageExp(15);
+
+            GameObject.Find("UII").GetComponent<UIManager>().addTreasure(Random.Range(0, 5));
 
             ManageLevel(50);
 
@@ -216,18 +222,23 @@ public class dog : MonoBehaviour
 
     public void SetName()
     {
-        bool maxdogs = GameObject.Find("DogManager").GetComponent<dogManager>().maxReached;
+        bool maxdogs = GameObject.Find("DogManager").GetComponent<dogManager>().maxReached; //use this for max dogs if u want
 
-        if (adoptable && !maxdogs)
+
+        if (adoptable && stray)
         {
-            dogName = inputField.GetComponent<Text>().text;
+            FindObjectOfType<UIManager>().ManageExp(40);
+            //dogName = inputField.GetComponent<Text>().text;
+
+            Debug.Log("ADOPT ATTEP");
             stray = false;
             name.SetActive(true);
-            namingCanvas.SetActive(false);
+            namingCanvas.SetActive(true);
         }
         else
         {
-            Debug.Log("This dog doesn't trust you enough!");
+            GameObject.Find("DogManager").GetComponent<dogManager>().SetTooltip("Can't Adopt!");
+            Debug.Log("Cannot adopt this dog");
         }
     }
 

@@ -28,7 +28,7 @@ public class UIScript : MonoBehaviour
 
     void OnMouseOver()
     {
-        Debug.Log("MOUSEOVER");
+        //Debug.Log("MOUSEOVER");
         foreach (Transform child in transform)
         {
 
@@ -42,7 +42,7 @@ public class UIScript : MonoBehaviour
 
     void OnMouseExit()
     {
-        Debug.Log("MOUSEEXIT");
+        //Debug.Log("MOUSEEXIT");
 
         foreach (Transform child in transform)
         {

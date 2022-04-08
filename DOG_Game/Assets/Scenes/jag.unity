@@ -2849,7 +2849,7 @@ PrefabInstance:
     - target: {fileID: 9152659575084052923, guid: c9b497a11c15f1d4c8d0700718ea2477, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1199224161}
     - target: {fileID: 9152659575084052923, guid: c9b497a11c15f1d4c8d0700718ea2477, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -6442,7 +6442,7 @@ PrefabInstance:
     - target: {fileID: 9152659575084052923, guid: c9b497a11c15f1d4c8d0700718ea2477, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1199224161}
     - target: {fileID: 9152659575084052923, guid: c9b497a11c15f1d4c8d0700718ea2477, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GetTreasure
@@ -8970,7 +8970,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 27
+  m_fontSize: 32.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9457,7 +9457,7 @@ PrefabInstance:
     - target: {fileID: 9152659575084052923, guid: c9b497a11c15f1d4c8d0700718ea2477, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1199224161}
     - target: {fileID: 9152659575084052923, guid: c9b497a11c15f1d4c8d0700718ea2477, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: GetPet

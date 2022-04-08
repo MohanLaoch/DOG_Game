@@ -64,7 +64,7 @@ public class dog : MonoBehaviour
         currentTreasure = allTreasure[index];
 
         // Sets happiness at the beginning of the scene
-        currentHappiness = (int)hslider.value;
+        //currentHappiness = (int)hslider.value;
         happinessBar.SetMaxHappiness(maxHappiness);
     }
 
@@ -167,11 +167,11 @@ public class dog : MonoBehaviour
 
     public void GetPet()
     {
-        Debug.Log("gotpet");
+        //Debug.Log("gotpet");
 
         if (canBePet)
         {
-            Debug.Log("gothappiness");
+            //Debug.Log("gothappiness");
             currentHappiness += 20;
             canBePet = false;
 
@@ -184,12 +184,12 @@ public class dog : MonoBehaviour
 
     public void GetFed()
     {
-        Debug.Log("gotfed");
+        //Debug.Log("gotfed");
         FindObjectOfType<UIManager>().ManageExp(5);
 
         if (hungry)
         {
-            Debug.Log("gothappiness");
+            //Debug.Log("gothappiness");
             currentHappiness += 10;
             hungry = false;
 
@@ -206,7 +206,7 @@ public class dog : MonoBehaviour
 
         if (hasTreasure)
         {
-            Debug.Log("got Treasure");
+            //Debug.Log("got Treasure");
             hasTreasure = false;
             treasureObj.SetActive(false);
             FindObjectOfType<UIManager>().ManageExp(15);
@@ -234,7 +234,7 @@ public class dog : MonoBehaviour
             FindObjectOfType<UIManager>().ManageExp(40);
             //dogName = inputField.GetComponent<Text>().text;
 
-            Debug.Log("ADOPT ATTEP");
+            //Debug.Log("ADOPT ATTEP");
             stray = false;
             name.SetActive(true);
             namingCanvas.SetActive(true);
@@ -242,7 +242,7 @@ public class dog : MonoBehaviour
         else
         {
             GameObject.Find("DogManager").GetComponent<dogManager>().SetTooltip("Can't Adopt!");
-            Debug.Log("Cannot adopt this dog");
+            //Debug.Log("Cannot adopt this dog");
         }
     }
 
